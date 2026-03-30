@@ -1,10 +1,3 @@
-"""
-Модуль обработки данных.
-Поддерживает ввод и обработку целых чисел, вещественных чисел и строк.
-Версия 1.1: добавлены функции median_integers и count_unique.
-"""
-
-
 def input_integers(prompt="Введите целые числа через пробел: "):
     raw = input(prompt)
     return list(map(int, raw.split()))
@@ -18,8 +11,6 @@ def input_floats(prompt="Введите вещественные числа че
 def input_string(prompt="Введите строку: "):
     return input(prompt)
 
-
-# --- Обработка целых чисел ---
 
 def sum_integers(numbers):
     return sum(numbers)
@@ -64,8 +55,6 @@ def count_unique(numbers):
     return len(set(numbers))
 
 
-# --- Обработка вещественных чисел ---
-
 def round_floats(numbers, decimals=2):
     return [round(n, decimals) for n in numbers]
 
@@ -79,8 +68,6 @@ def average_floats(numbers):
         raise ValueError("Список пуст")
     return sum(numbers) / len(numbers)
 
-
-# --- Обработка строк ---
 
 def reverse_string(s):
     return s[::-1]
@@ -114,8 +101,6 @@ def words_list(s):
 def capitalize_words(s):
     return " ".join(w.capitalize() for w in s.split())
 
-
-# --- Интерактивное меню ---
 
 def main():
     print("=== Модуль обработки данных ===\n")

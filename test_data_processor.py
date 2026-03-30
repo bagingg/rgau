@@ -1,7 +1,3 @@
-"""
-Тесты для модуля data_processor.py
-ПЗ 5 — Основы работы с Git
-"""
 import pytest
 from data_processor import (
     sum_integers, average_integers, max_integer, min_integer,
@@ -11,8 +7,6 @@ from data_processor import (
     is_palindrome, count_char, words_list,
 )
 
-
-# ── Целые числа ────────────────────────────────────────────────────
 
 class TestSumIntegers:
     def test_positive(self):
@@ -105,8 +99,6 @@ class TestSortIntegers:
         assert sort_integers([]) == []
 
 
-# ── Вещественные числа ─────────────────────────────────────────────
-
 class TestFloats:
     def test_sum(self):
         assert abs(sum_floats([1.1, 2.2, 3.3]) - 6.6) < 1e-9
@@ -115,7 +107,6 @@ class TestFloats:
         assert abs(average_floats([1.0, 3.0]) - 2.0) < 1e-9
 
     def test_round(self):
-        # Python использует банковское округление: 1.555 -> 1.55 (round half to even)
         assert round_floats([1.555, 2.444], 2) == [1.55, 2.44]
 
     def test_round_default(self):
@@ -125,8 +116,6 @@ class TestFloats:
         with pytest.raises(ValueError):
             average_floats([])
 
-
-# ── Строки ─────────────────────────────────────────────────────────
 
 class TestStrings:
     def test_reverse(self):
