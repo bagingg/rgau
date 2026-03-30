@@ -1,6 +1,7 @@
 """
 Модуль обработки данных.
 Поддерживает ввод и обработку целых чисел, вещественных чисел и строк.
+Версия 1.1: добавлены функции median_integers и count_unique.
 """
 
 
@@ -50,6 +51,19 @@ def sort_integers(numbers, reverse=False):
     return sorted(numbers, reverse=reverse)
 
 
+def median_integers(numbers):
+    if not numbers:
+        raise ValueError("Список пуст")
+    s = sorted(numbers)
+    n = len(s)
+    mid = n // 2
+    return (s[mid - 1] + s[mid]) / 2 if n % 2 == 0 else float(s[mid])
+
+
+def count_unique(numbers):
+    return len(set(numbers))
+
+
 # --- Обработка вещественных чисел ---
 
 def round_floats(numbers, decimals=2):
@@ -95,6 +109,10 @@ def count_char(s, char):
 
 def words_list(s):
     return s.split()
+
+
+def capitalize_words(s):
+    return " ".join(w.capitalize() for w in s.split())
 
 
 # --- Интерактивное меню ---
