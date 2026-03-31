@@ -55,6 +55,10 @@ def count_unique(numbers):
     return len(set(numbers))
 
 
+def clamp(value, min_val, max_val):
+    return max(min_val, min(max_val, value))
+
+
 def round_floats(numbers, decimals=2):
     return [round(n, decimals) for n in numbers]
 
